@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #3e50b4; /* Lighter dark blue background */
+            font-weight: bold; /* Make all text bold */
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #4e6dd4; /* Lighter blue for sidebar */
+            color: white;
+            transition: width 0.3s;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items */
+        }
+        .sidebar h2 {
+            margin: 10px 0;
+            font-size: 20px; /* Smaller font size */
+            text-align: center; /* Center the sidebar title */
+        }
+        .sidebar button {
+            width: 80%;
+            padding: 10px; /* Smaller padding */
+            border: none;
+            background: none;
+            color: white;
+            text-align: center; /* Center button text */
+            cursor: pointer;
+            font-size: 14px; /* Smaller button font size */
+            margin: 5px 0; /* Space between buttons */
+            font-weight: bold; /* Make button text bold */
+        }
+        .sidebar button:hover {
+            background-color: #5962d8;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            color: white;
+        }
+        .iframe-container {
+            flex: 1;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+        }
+        .fullscreen-button {
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            align-self: center; /* Center the button */
+            font-size: 14px; /* Smaller button font size */
+            font-weight: bold; /* Make button text bold */
+        }
+        .fullscreen-button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Educational Stuff</h2>
+    <button onclick="changeIframe('https://200d4bc4-10cf-4850-b60f-a9599cb4b78d-00-34wza27dx1xg8.riker.replit.dev/')">Proxy (buggy)</button>
+    <button onclick="changeIframe('https://monkeymarket.click/mm/')">monkey mart</button>
+ <button onclick="changeIframe('https://geometrydashlite.io/')">geometry dash</button>
+ <button onclick="changeIframe('https://littlealchemy2.com')">lil alchemy 2</button>
+ <button onclick="changeIframe('https://www.hoodamath.com/mobile/games/ovo/game.html?nocheckorient=1')">OvO</button>
+ <button onclick="changeIframe('https://lekug.github.io/tn6pS9dCf37xAhkJv/')">run 3</button>
+<button onclick="changeIframe('https://augustberchelmann.com/mario/')">suerp mario 64</button>
+</div>
+
+<div class="content">
+    <div class="iframe-container">
+        <iframe id="iframe" src="https://www.example.com"></iframe>
+    </div>
+    <button class="fullscreen-button" id="fullscreen-btn">Go Fullscreen</button>
+</div>
+
+<script>
+    function changeIframe(url) {
+        document.getElementById('iframe').src = url;
+    }
+
+    document.getElementById('fullscreen-btn').addEventListener('click', function() {
+        const iframe = document.getElementById('iframe');
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+            iframe.msRequestFullscreen();
+        }
+    });
+</script>
+
+</body>
+</html>
