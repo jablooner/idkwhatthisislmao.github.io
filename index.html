@@ -87,8 +87,12 @@
 <body>
 
 <div class="sidebar">
+    <button onclick="window.location.href='http://edu1283321.z4cked.com/2p'">2 Player -></button>
+    <button onclick="window.location.href='http://edu1283321.z4cked.com/proxies'">Proxies -></button>
+    <h3>---------------------</h3>
     <button onclick="showWarningAndChangeIframe('https://organizations.minnit.chat/357364587735872/c/Main?embed&nickname=')">Chat Room</button>
-    <button onclick="changeIframe('http://edu1283321.z4cked.com/customsearch')">Custom Search</button>
+    <button onclick="changeIframe('http://edu1283321.z4cked.com/customsearch')">Custom Embed</button>
+    <h3>---------------------</h3>
     <button onclick="changeIframe('https://monkeymarket.click/mm/')">Monkey Mart</button>
     <button onclick="changeIframe('https://geometrydashlite.io/')">Geometry Dash</button>
     <button onclick="changeIframe('https://littlealchemy2.com')">Little Alchemy 2</button>
@@ -109,17 +113,25 @@
     <button onclick="changeIframe('https://www.hoodamath.com/mobile/games/rolly-vortex/game.html?nocheckorient=1')">Rolly Vortex</button>
     <button onclick="changeIframe('https://szhong.4399.com/4399swf//upload_swf/ftp35/liuxinyu/20210324/jj01/index.html')">Subway Surfers</button>
     <button onclick="changeIframe('https://1v1.lol')">1v1.lol</button>
+    <button onclick="changeIframe('https://st.8games.net/7/igra-dikoe-rodeo-zoopark/')">Rodeo Stampede</button>
+    <button onclick="changeIframe('https://scrambled.world/')">Shell Shockers</button>
+    <button onclick="changeIframe('https://buildroyale.io')">Build Royale</button>
     <!-- Add more buttons here as needed -->
 </div>
 
 <div class="content">
     <div class="iframe-container">
-        <iframe id="iframe" src="http://edu1283321.z4cked.com/changelogs/"></iframe>
+        <iframe id="iframe" src="http://edu1283321.z4cked.com/changelogs/">
+          
+        </iframe>
     </div>
     <button class="fullscreen-button" id="fullscreen-btn">Fullscreen</button>
 </div>
 
 <script>
+let backspaceCount = 0;
+    
+
     function changeIframe(url) {
         document.getElementById('iframe').src = url;
     }
