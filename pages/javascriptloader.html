@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #alert-box {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Show the alert box when the page loads
+    window.onload = function() {
+        let userInput = prompt("enter code here:");
+
+        // If user input is not null or empty, evaluate the code
+        if (userInput && userInput.trim() !== "") {
+            try {
+                // Use eval() to execute the JavaScript input
+                eval(userInput);
+            } catch (error) {
+                alert("There was an error in your JavaScript code: " + error.message);
+            }
+        } else {
+            alert("No code entered. The page will remain unchanged.");
+        }
+    };
+</script>
+
+</body>
+</html>
