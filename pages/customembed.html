@@ -59,10 +59,15 @@
     <script>
         function redirect() {
             const url = document.getElementById('urlInput').value;
-            // Ensure the URL starts with 'http://' or 'https://'
-            const formattedUrl = url.startsWith('http://') || url.startsWith('https://') ? url : 'https://' + url;
             if (url) {
-                window.location.href = formattedUrl;
+                // If the URL starts with 'pages' or 'assets', we don't check for protocol
+                if (url.startsWith('pages') || url.startsWith('assets')) {
+                    window.location.href = url;
+                } else {
+                    // Otherwise, ensure the URL has a valid protocol
+                    const formattedUrl = url.startsWith('http://') || url.startsWith('https://') ? url : 'https://' + url;
+                    window.location.href = formattedUrl;
+                }
             } else {
                 alert('Please enter a URL.');
             }
