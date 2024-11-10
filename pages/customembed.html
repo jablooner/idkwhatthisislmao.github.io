@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Embed</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent; /* Invisible background */
+            font-family: Arial, sans-serif;
+            color: gray; /* Gray text */
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5vw; /* Smaller scalable font size */
+            margin: 0;
+        }
+        p {
+            font-size: 2vw; /* Smaller scalable font size */
+            margin: 5px 0 30px; /* Increased bottom margin for larger separation */
+        }
+        input[type="text"] {
+            border: 2px solid gray; /* Gray border */
+            border-radius: 20px; /* Rounded corners */
+            padding: 6px; /* Smaller padding */
+            font-size: 1.2vw; /* Smaller scalable font size */
+            margin-right: 10px;
+            width: 220px; /* Adjusted width */
+        }
+        button {
+            padding: 6px 10px; /* Smaller padding */
+            border: none;
+            border-radius: 20px; /* Rounded corners */
+            background-color: gray; /* Button color */
+            color: white; /* Button text color */
+            font-size: 1.2vw; /* Smaller scalable font size */
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 0.8; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Custom Embed</h1>
+    <p>This only works for websites that allow you to embed. (this is not a proxy)</p>
+    <div>
+        <input type="text" id="urlInput" placeholder="Enter URL here" />
+        <button onclick="redirect()">Go</button>
+    </div>
+
+    <script>
+        function redirect() {
+            const url = document.getElementById('urlInput').value;
+            // Ensure the URL starts with 'http://' or 'https://'
+            const formattedUrl = url.startsWith('http://') || url.startsWith('https://') ? url : 'https://' + url;
+            if (url) {
+                window.location.href = formattedUrl;
+            } else {
+                alert('Please enter a URL.');
+            }
+        }
+    </script>
+
+</body>
+</html>
