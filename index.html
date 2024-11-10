@@ -104,6 +104,7 @@
     <button onclick="changeIframe('pages/proxypassword.html')">Proxy</button>
     <button onclick="changeIframe('https://forms.gle/Nzj3D4VdCmSKujiL7')">Feedback</button>
     <h3>---------------------</h3>
+    <button onclick="showWarningAndChangeIframe('https://eaglercraftx.pages.dev')">Minecraft (yes)</button>
     <button onclick="changeIframe('https://monkeymarket.click/mm/')">Monkey Mart</button>
     <button onclick="changeIframe('https://geometrydashlite.io/')">Geometry Dash</button>
     <button onclick="changeIframe('https://littlealchemy2.com')">Little Alchemy 2</button>
@@ -153,7 +154,7 @@ let backspaceCount = 0;
 
     function showWarningAndChangeIframe(url) {
         changeIframe(url);
-        alert("You are about to enter the Chat Room. Do not try to sign up or visit shop. You WILL get flagged.");
+        alert("Its gonna ask u if u wanna enable profanity filter, please hit yes for your own safety");
     }
 
     document.getElementById('fullscreen-btn').addEventListener('click', function() {
