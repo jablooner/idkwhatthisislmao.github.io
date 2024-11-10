@@ -65,29 +65,30 @@
   </div>
 
   <script>
-    const musicFolder = '../music';
-    const songFiles = ['Bobby Sox - Green Day.mp3', 'Going Away To College - blink 182.mp3', 'Green Day - Green Day.mp3', 'Westbound Sign - Green Day.mp3'];
-    songFiles.sort();
-
+    const musicFolder = '../music/';
     const audioPlayer = document.getElementById('audio-player');
     const songListElement = document.getElementById('song-list');
 
-    function populateSongList() {
-      songFiles.forEach(song => {
-        const li = document.createElement('li');
-        li.classList.add('song-item');
-        li.textContent = song;
-        
-        li.addEventListener('click', () => {
-          audioPlayer.src = musicFolder + song;
-          audioPlayer.play();
+    fetch('../assets/audiofetcher.php')
+      .then(response => response.json())
+      .then(songFiles => {
+        songFiles.sort();
+        songFiles.forEach(song => {
+          const li = document.createElement('li');
+          li.classList.add('song-item');
+          li.textContent = song;
+
+          li.addEventListener('click', () => {
+            audioPlayer.src = musicFolder + song;
+            audioPlayer.play();
+          });
+
+          songListElement.appendChild(li);
         });
-
-        songListElement.appendChild(li);
+      })
+      .catch(error => {
+        console.error('Error fetching audio files:', error);
       });
-    }
-
-    populateSongList();
   </script>
 
 </body>
