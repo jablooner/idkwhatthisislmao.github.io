@@ -61,13 +61,11 @@
             const url = document.getElementById('urlInput').value;
             if (url) {
                 
-                if (url.startsWith('hidden') {
-                    window.location.href = "hidden.html";
-                } else {
+                
                     
                     const formattedUrl = url.startsWith('http://') || url.startsWith('https://') ? url : 'https://' + url;
                     window.location.href = formattedUrl;
-                }
+
             } else {
                 alert('Please enter a URL.');
             }
