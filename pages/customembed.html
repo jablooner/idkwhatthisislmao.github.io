@@ -12,38 +12,38 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: transparent; /* Invisible background */
+            background-color: transparent; 
             font-family: Arial, sans-serif;
-            color: gray; /* Gray text */
+            color: gray; 
             text-align: center;
         }
         h1 {
-            font-size: 3.5vw; /* Smaller scalable font size */
+            font-size: 3.5vw; 
             margin: 0;
         }
         p {
-            font-size: 2vw; /* Smaller scalable font size */
-            margin: 5px 0 30px; /* Increased bottom margin for larger separation */
+            font-size: 2vw; 
+            margin: 5px 0 30px; 
         }
         input[type="text"] {
-            border: 2px solid gray; /* Gray border */
-            border-radius: 20px; /* Rounded corners */
-            padding: 6px; /* Smaller padding */
-            font-size: 1.2vw; /* Smaller scalable font size */
+            border: 2px solid gray; 
+            border-radius: 20px; 
+            padding: 6px; 
+            font-size: 1.2vw; 
             margin-right: 10px;
-            width: 220px; /* Adjusted width */
+            width: 220px; 
         }
         button {
-            padding: 6px 10px; /* Smaller padding */
+            padding: 6px 10px; 
             border: none;
-            border-radius: 20px; /* Rounded corners */
-            background-color: gray; /* Button color */
-            color: white; /* Button text color */
-            font-size: 1.2vw; /* Smaller scalable font size */
+            border-radius: 20px; 
+            background-color: gray; 
+            color: white; 
+            font-size: 1.2vw; 
             cursor: pointer;
         }
         button:hover {
-            opacity: 0.8; /* Hover effect */
+            opacity: 0.8; 
         }
     </style>
 </head>
@@ -60,11 +60,11 @@
         function redirect() {
             const url = document.getElementById('urlInput').value;
             if (url) {
-                // If the URL starts with 'pages' or 'assets', we don't check for protocol
+                
                 if (url.startsWith('pages') || url.startsWith('assets')) {
                     window.location.href = url;
                 } else {
-                    // Otherwise, ensure the URL has a valid protocol
+                    
                     const formattedUrl = url.startsWith('http://') || url.startsWith('https://') ? url : 'https://' + url;
                     window.location.href = formattedUrl;
                 }
