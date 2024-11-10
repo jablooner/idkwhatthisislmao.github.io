@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROXY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: transparent; /* Invisible background */
+            color: #888; /* Gray text */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center;
+            height: 100vh; /* Full height */
+            text-align: center;
+            padding: 0; /* Removed extra padding */
+            overflow: hidden; /* Prevent scrolling */
+        }
+        h1 {
+            font-size: 3em; /* Smaller font size */
+            font-weight: bold;
+            color: #888; /* Gray color */
+            margin-bottom: 5px; /* Adjusted margin */
+        }
+        p {
+            font-size: 1.5em; /* Smaller size */
+            color: #888; /* Gray text */
+            margin: 2px 0; /* Reduced space */
+        }
+        div {
+            margin-top: 15px; /* Reduced space above password box */
+        }
+        input[type="password"] {
+            padding: 10px; /* Reduced padding */
+            border-radius: 5px; /* Less rounded input box */
+            border: 1px solid #ccc; /* Light border */
+            background-color: transparent; /* Invisible background */
+            color: #555; /* Darker text color for the input */
+            font-size: 1.2em; /* Smaller font size */
+            width: 200px; /* Reduced width of the input */
+            margin-right: 10px; /* Space between input and button */
+        }
+        button {
+            padding: 10px 15px; /* Reduced padding */
+            border: none;
+            border-radius: 5px; /* Less rounded button */
+            background-color: transparent; /* Invisible background */
+            color: #888; /* Gray text */
+            font-size: 1.2em; /* Smaller font size */
+            cursor: pointer; /* Pointer cursor */
+        }
+        button:hover {
+            color: #555; /* Darker gray on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CHAT ROOM</h1>
+    <p>This is the chat room</p>
+    <p>It now has a password</p>
+    <p>Its the same as the proxy password</p>
+    
+    <div>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkPassword()">Enter</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'greenday') {
+                window.location.href = 'https://organizations.minnit.chat/357364587735872/c/Main?embed';
+            } else {
+                alert('Incorrect password.'); // Alert for incorrect password
+            }
+        }
+    </script>
+
+</body>
+</html>
