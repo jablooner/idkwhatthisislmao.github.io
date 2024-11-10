@@ -18,3 +18,5 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
+
+console.log("panicbutton.js loaded")
