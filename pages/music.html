@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio</title>
+  <style>
+    body {
+      color: #ccc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    #audio-container {
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    #audio-title {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    #song-list {
+      max-height: 400px;
+      width: 100%;
+      overflow-y: auto;
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .song-item {
+      margin: 5px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .song-item:hover {
+      background-color: #555;
+    }
+
+    audio {
+      margin-top: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="audio-container">
+    <div id="audio-title">Audio</div>
+    <ul id="song-list"></ul>
+    <audio id="audio-player" controls></audio>
+  </div>
+
+  <script>
+    const musicFolder = '../music';
+    const songFiles = [''];
+    songFiles.sort();
+
+    const audioPlayer = document.getElementById('audio-player');
+    const songListElement = document.getElementById('song-list');
+
+    function populateSongList() {
+      songFiles.forEach(song => {
+        const li = document.createElement('li');
+        li.classList.add('song-item');
+        li.textContent = song;
+        
+        li.addEventListener('click', () => {
+          audioPlayer.src = musicFolder + song;
+          audioPlayer.play();
+        });
+
+        songListElement.appendChild(li);
+      });
+    }
+
+    populateSongList();
+  </script>
+
+</body>
+</html>
