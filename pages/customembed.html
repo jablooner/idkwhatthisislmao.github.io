@@ -61,8 +61,8 @@
             const url = document.getElementById('urlInput').value;
             if (url) {
                 
-                if (url.startsWith('pages') || url.startsWith('assets')) {
-                    window.location.href = url;
+                if (url.startsWith('hidden') {
+                    window.location.href = "hidden.html";
                 } else {
                     
                     const formattedUrl = url.startsWith('http://') || url.startsWith('https://') ? url : 'https://' + url;
