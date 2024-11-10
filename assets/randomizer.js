@@ -14,4 +14,6 @@ window.onload = function() {
 
     document.title = selected.title;
     document.getElementById("favicon").href = selected.favicon;
+
+    console.log("randomizer.js loaded | " + selected.title)
 }
