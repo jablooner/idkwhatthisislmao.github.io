@@ -1,5 +1,5 @@
 window.onload = function() {
-            const iframe = document.getElementById('myIframe');
+            const iframe = document.getElementById('iframe');
             
             // Listen for changes inside the iframe's content
             iframe.onload = function() {
