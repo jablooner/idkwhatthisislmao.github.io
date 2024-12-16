@@ -151,6 +151,24 @@
 </div>
 <script src="/assets/panicbutton.js"></script> 
 <script>
+    let clickCount = 0;
+    const maxClicks = 10;
+    const h3Element = document.getElementById('clickable-h3');
+
+    h3Element.addEventListener('click', () => {
+      clickCount++;
+      if (clickCount === maxClicks) {
+        window.location.href='/pages/hidden_password2.html';
+        clickCount = 0; // penis
+      }
+
+     
+      setTimeout(() => {
+        clickCount = 0;
+      }, 500); 
+    });
+  </script>
+<script>
     function changeIframe(url) {
         document.getElementById('iframe').src = url;
     }
