@@ -2,48 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>New Tab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Log</title>
+    <link id="favicon" rel="icon" href="" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0; 
-            color: #333; 
+        body, html {
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            background: transparent;
-        }
-        h1 {
-            font-size: 3em; 
-            font-weight: bold;
-            color: #666; 
-        }
-        ul {
-            list-style-type: none;
             padding: 0;
-            font-size: 1.5em; 
-            color: #444; 
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
-        li {
-            margin: 10px 0; 
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-
-    <div>
-        <h1>goodbye</h1>
-        <ul>
-             <li>this isnt worth it anymore</li>
-            <li>delete this file</li>
-            <li>this will eventually go offline in a few days</li>
-    
-        </ul>
-    </div>
-
+    <iframe src="/pages/entry.html" allowfullscreen sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-modals"></iframe>
 </body>
 </html>
